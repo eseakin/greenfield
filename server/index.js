@@ -25,24 +25,25 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/../public'));
 
 // create new recording item with metadata, get back recording endpoint url
-app.post('/api/recording'), (req, res) => {
+app.post('/api/recording', (req, res) => {
+  console.log('recording')
   mediaRepo.createItem(req.body).then(data => res.status(200).json(data)).catch(err => res.status(500).json(err));
-};
+});
 
 // get recording url and metadata from id
-app.get('/api/recording/:id'), (req, res) => {
+app.get('/api/recording/:id', (req, res) => {
   mediaRepo.getItem(req.params.id).then(data => res.status(200).json(data)).catch(err => res.status(500).json(err));
-};
+});
 
 // delete recording from id
-app.delete('/api/recording/:id'), (req, res) => {
+app.delete('/api/recording/:id', (req, res) => {
   mediaRepo.deleteItem(req.params.id).then(data => res.status(200)).catch(err => res.status(500).json(err));
-};
+});
 
 // update recording metadata from id
-app.put('/api/recording/:id'), (req, res) => {
+app.put('/api/recording/:id', (req, res) => {
   mediaRepo.updateItem(req.params.id, req.body).then(data => res.status(200)).catch(err => res.status(500).json(err));
-};
+});
 
 // get list of recordings (returns list of recording IDs)
 app.get('/api/recordings', (req, res) => {
@@ -50,8 +51,10 @@ app.get('/api/recordings', (req, res) => {
 });
 
 // server index.js
-app.get('/', (req, res) => res.render('index'));
-app.get('/recorder', (req, res) => res.render('recorder'));
+app.get('/', (req, res) => res.send('index'));
+
+//JUST FOR TESTING
+// app.get('/recorder', (req, res) => res.redirect('/'));
 
 app.listen(port, err => {
   if (err) {

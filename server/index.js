@@ -26,7 +26,7 @@ app.use(express.static(__dirname + '/../public'));
 
 // create new recording item with metadata, get back recording endpoint url
 app.post('/api/recording', (req, res) => {
-  console.log('recording')
+  console.log('recording');
   mediaRepo.createItem(req.body).then(data => res.status(200).json(data)).catch(err => res.status(500).json(err));
 });
 

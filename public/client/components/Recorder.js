@@ -18,7 +18,7 @@ class Recorder extends React.Component {
 
   init() {
     // audioRecorder.init(statusUpdate.bind(this));
-    console.log('init')
+    console.log('init');
   }
 
   handleClick(event) {
@@ -26,18 +26,18 @@ class Recorder extends React.Component {
     var context = this;
 
     if (!this.state.recordingState) {
-      console.log('setting recordingState true')
+      console.log('setting recordingState true');
       this.setState({recordingState: true,
                      recordBtn: '■',
                      className: 'round-button-stop',
                      status: 'recording'});
-      var fakeData = {username:'anon', title:'first record', description:'party time', tags: ['party', 'first']};
+      var fakeData = {username: 'anon', title: 'first record', description: 'party time', tags: ['party', 'first']};
       var node = document.getElementsByClassName('audioInput');
 
       $.post(url, fakeData, (data) => {
         console.log('success', data);
         // audioRecorder.start(data.url, node);
-        context.setState({recordId: data.id})
+        context.setState({recordId: data.id});
       });
     } else {
       // var id = this.state.recordId
@@ -47,7 +47,7 @@ class Recorder extends React.Component {
                      recordBtn: '●',
                      className: 'round-button-record',
                      status: 'stopped'});
-      console.log('setting recordingState false ')
+      console.log('setting recordingState false ');
       $.get(url + '/' + id, (data) => {
         console.log('success', data);
         // audioRecorder.stop();
@@ -57,7 +57,7 @@ class Recorder extends React.Component {
   }
 
   statusUpdate(status) {
-    this.setState({status: status})
+    this.setState({status: status});
   }
 
   render() {
@@ -93,7 +93,7 @@ class Recorder extends React.Component {
       </div>
     </div>
 
-    )
+    );
   }
 }
 

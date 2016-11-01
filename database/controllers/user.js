@@ -39,14 +39,12 @@ const findId = function(id, cb) {
 const init = function(data) {
 	//CLEAR DATABASE
 	UserModel.remove({}, function(err) {
-	   console.log('collection removed')
 	});
 
 	//INSERT DEMO USER DATA
 	data.forEach( (user) => {
 		if (user.username) {
 			addUser(user, (err)=> console.log(err));
-			console.log(user);
 		}
 	});
 }

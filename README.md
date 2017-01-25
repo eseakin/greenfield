@@ -23,7 +23,6 @@ Radrad.io is an audio recording and listening service through which anyone can e
 ## Usage
 
 ```sh
-npm install // install required libraries
 npm start // starts nodemon express/ssl server
 webpack-watch // starts webpack module manager for dependencies
 mongod // starts mongodb server

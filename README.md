@@ -2,7 +2,7 @@
 
 Medium for Radio
 
-radrad.io is a audio recording and listening service through which anyone can easily set up a live radio stream and broadcast to the world instantly. Users are able to live broadcast instantaneously, while also recording their streams for future listening. Listeners are able to message broadcasters as they broadcast live, creating instant feedback for the broadcasters. 
+Radrad.io is an audio recording and listening service through which anyone can easily set up a live radio stream and broadcast to the world instantly. Users are able to live broadcast while also recording their streams for future listening.
 
 ![ScreenShot](radradio.jpeg)
 
